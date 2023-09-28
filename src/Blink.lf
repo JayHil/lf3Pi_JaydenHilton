@@ -27,8 +27,12 @@ main reactor {
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
   =}
   reaction(t) {=
+<<<<<<< HEAD
+    self->led_on = !self->led_on; 
+=======
     self->led_on = !self->led_on;
     printf("LED State: %b\n", self->led_on);
+>>>>>>> 532698bcbd149e21b7ca996c3c14f36242a5bd84
     gpio_put(PICO_DEFAULT_LED_PIN, !self->led_on);
   =}
 }

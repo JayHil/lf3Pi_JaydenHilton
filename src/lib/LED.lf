@@ -5,11 +5,9 @@ target C {
   },
   threading: false,
 }
-
 preamble {=
   #include <hardware/gpio.h>
 =}
-
 reactor LED {
   input set:bool;
     
@@ -19,7 +17,6 @@ reactor LED {
   =}
 
   reaction(set) {=
-    printf("LED State: %b\n", set->value);
     gpio_put(PICO_DEFAULT_LED_PIN, set->value);
   =}
 }
